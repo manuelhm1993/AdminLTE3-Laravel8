@@ -34,6 +34,7 @@ class RouteServiceProvider extends ServiceProvider
 
             // --------------- Registrar el archivo de rutas admin
             Route::middleware(['web', 'auth'])
+                ->prefix('admin')
                 ->group(base_path('routes/admin.php'));
 
             Route::prefix('api')
