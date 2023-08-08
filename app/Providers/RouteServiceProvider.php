@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    public const HOME = '/'; // --------------- Cambiar la redirección de login a la página principal
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -31,6 +31,10 @@ class RouteServiceProvider extends ServiceProvider
         $this->routes(function () {
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            // --------------- Registrar el archivo de rutas admin
+            Route::middleware(['web', 'auth'])
+                ->group(base_path('routes/admin.php'));
 
             Route::prefix('api')
                 ->middleware('api')
