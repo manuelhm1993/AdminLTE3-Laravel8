@@ -26,7 +26,9 @@
                                 <th scope="row">{{ $user->id }}</th>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ App\MH\Clases\Helper::getDateDiffToString($user->created_at, 'now') }}</td>
+
+                                {{-- Método de la clase Carbon que formatea diferencias de fechas --}}
+                                <td>{{ $user->created_at->diffForHumans() }}</td>
                             </tr>
                         @endforeach
                     </tbody>
