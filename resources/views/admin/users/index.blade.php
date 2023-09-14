@@ -39,9 +39,24 @@
     </div>
 @stop
 
+@section('css')
+    {{-- Styles para volver el datatable responsive --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap4.min.css">
+@stop
+
 @section('js')
+    {{-- Scripts para volver el datatable responsive --}}
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap4.min.js"></script>
+
     <script>
+        // Configuraciones adicionales
+        const options = {
+            responsive: true,
+            autoWidth: false
+        };
+
         // Crear un objeto datatable
-        const datatable = new DataTable('#usuarios');
+        const datatable = new DataTable('#usuarios', options);
     </script>
 @stop
