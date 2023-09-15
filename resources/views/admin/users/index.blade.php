@@ -55,7 +55,25 @@
             responsive: true,
             autoWidth: false,
             language: {
-                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json',
+                // url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json', // Plugin para traducción automática
+                info: 'Mostrando la página _PAGE_ de _PAGES_',
+                infoEmpty: 'No hay registros disponibles',
+                infoFiltered: '(filtrado de _MAX_ registros totales)',
+                lengthMenu: 'Mostrar ' + `
+                <select class="custom-select custom-select-sm form-control form-control-sm">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="-1">Todos</option>
+                </select>
+                ` + ' registros por página',
+                zeroRecords: 'No hay coincidencias - lo sentimos',
+                search: 'Buscar:',
+                paginate: {
+                    next: 'Siguiente',
+                    previous: 'Anterior'
+                }
             },
         };
 
