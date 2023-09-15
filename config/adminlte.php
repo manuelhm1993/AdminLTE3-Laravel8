@@ -107,7 +107,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
             'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'AdminLTE Preloader Image',
@@ -301,8 +301,8 @@ return [
             'topnav_right' => true,
         ],
         [
-            'text'   => 'Link 1',
-            'url'    => '#',
+            'text'   => 'Home',
+            'url'    => '/',
             'topnav' => true, // Indicar que el menú estará en el navbar
         ],
 
@@ -326,8 +326,13 @@ return [
             'label_color' => 'danger',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'  => 'Usuarios',
+            'route' => 'admin.users.index',
+            'icon'  => 'fas fa-fw fa-users',
+        ],
+        [
+            'text'        => 'Categorías',
+            'url'         => '#',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
