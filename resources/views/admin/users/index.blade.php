@@ -22,18 +22,17 @@
                     </tr>
                 </thead>
 
-                <tbody>
+                {{-- diffForHumans permite mostrar la diferencia de fecha y hora formateadas fácilmente --}}
+                {{-- <tbody>
                     @foreach ($users as $user)
                         <tr>
                             <th scope="row">{{ $user->id }}</th>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-
-                            {{-- Método de la clase Carbon que formatea diferencias de fechas --}}
                             <td>{{ $user->created_at->diffForHumans() }}</td>
                         </tr>
                     @endforeach
-                </tbody>
+                </tbody> --}}
             </table>
         </div>
     </div>
@@ -75,6 +74,13 @@
                     previous: 'Anterior'
                 }
             },
+            ajax: "{{ route('api.admin.datatables.users') }}",
+            columns: [
+                {data: 'id'},
+                {data: 'name'},
+                {data: 'email'},
+                {data: 'created_at'},
+            ]
         };
 
         // Crear un objeto datatable
